@@ -23,7 +23,7 @@ class Server(threading.Thread):
         self.callback = callback
         super().__init__()
 
-    def send(self, message: Type[Message]) -> None:
+    def send(self, message: bytes) -> None:
         self.connection.send(message)
 
     def run(self) -> None:

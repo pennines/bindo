@@ -6,6 +6,9 @@ from typing import Dict, Union
 
 class MessageFactory(object):
 
+    def __init__(self, buffer: bytes):
+        self.buffer = buffer
+
     def append_buffer(self, buffer: bytes) -> None:
         self.buffer += buffer
 
@@ -19,7 +22,8 @@ class MessageFactory(object):
 class MessageWriter(MessageFactory):
 
     def __init__(self) -> None:
-        self.buffer = bytes()
+        buffer = bytes()
+        super().__init__(buffer)
 
     def pack_integer(self, value: int) -> None:
         self.buffer += struct.pack('<i', value)
@@ -38,9 +42,8 @@ class MessageWriter(MessageFactory):
 class MessageReader(MessageFactory):
 
     def __init__(self, buffer: bytes) -> None:
-        self.buffer = buffer
         self.pointer = 0
-        # It's not as elegant as I want it to be but it works.
+        super().__init__(buffer)
 
     def unpack_integer(self) -> int:
         (value,) = struct.unpack(
@@ -64,7 +67,8 @@ class MessageReader(MessageFactory):
 
 class Message(object):
 
-    def pack_message(self, message_code: int, buffer: bytes) -> bytes:
+    @staticmethod
+    def construct_message(message_code: int, buffer: bytes) -> bytes:
         buffer_len = len(buffer) + 4
         message = MessageWriter()
         message.pack_integer(buffer_len)
@@ -106,7 +110,7 @@ class Login(Message):
         message.pack_integer(self.version)
         message.pack_string(self.hexdigest)
         message.pack_integer(self.minor_version)
-        return super().pack_message(1, message.get_buffer())
+        return self.construct_message(1, message.get_buffer())
 
     @staticmethod
     def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:

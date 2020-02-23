@@ -1,0 +1,319 @@
+2020-02-24 01:08:02,808 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:08:02,815 DEBUG Registering process with pid 648753 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-648753.pid`
+2020-02-24 01:08:02,863 PERFORMANCE Module tracker built: 0.023423s
+2020-02-24 01:08:02,967 INFO Parsing 624 stubs and sources...
+2020-02-24 01:08:04,602 PERFORMANCE Sources parsed: 1.739596s
+2020-02-24 01:08:04,703 INFO Building type environment...
+2020-02-24 01:08:05,125 INFO Updating is from empty stub result Environment
+2020-02-24 01:08:05,126 INFO Updating Alias Environment
+2020-02-24 01:08:05,126 INFO Updating Edges Environment
+2020-02-24 01:08:05,127 INFO Updating Undecorated functions Environment
+2020-02-24 01:08:05,129 INFO Updating Class metadata Environment
+2020-02-24 01:08:05,131 INFO Updating parse annotation Environment
+2020-02-24 01:08:05,133 INFO Updating attributes Environment
+2020-02-24 01:08:05,134 INFO Updating Global Environment
+2020-02-24 01:08:05,138 INFO Updating Global Locations Environment
+2020-02-24 01:08:05,239 PERFORMANCE Full environment built: 0.522938s
+2020-02-24 01:08:05,389 INFO Checking 26 functions...
+2020-02-24 01:08:05,449 INFO Processed 14 of 26 functions
+2020-02-24 01:08:05,450 INFO Processed 26 of 26 functions
+2020-02-24 01:08:05,451 PERFORMANCE Check_TypeCheck: 0.135875s
+2020-02-24 01:08:05,452 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:08:05,504 INFO Postprocessing 624 sources...
+2020-02-24 01:08:05,557 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:08:05,612 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:08:05,613 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:08:05,617 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-648753.pid`
+2020-02-24 01:08:05,631 PERFORMANCE Check: 2.779382s
+2020-02-24 01:08:05,634 ERROR Found 6 type errors!
+
+2020-02-24 01:09:31,624 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:09:31,630 DEBUG Registering process with pid 650031 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-650031.pid`
+2020-02-24 01:09:31,678 PERFORMANCE Module tracker built: 0.030097s
+2020-02-24 01:09:31,778 INFO Parsing 624 stubs and sources...
+2020-02-24 01:09:33,376 PERFORMANCE Sources parsed: 1.698032s
+2020-02-24 01:09:33,477 INFO Building type environment...
+2020-02-24 01:09:33,908 INFO Updating is from empty stub result Environment
+2020-02-24 01:09:33,909 INFO Updating Alias Environment
+2020-02-24 01:09:33,909 INFO Updating Edges Environment
+2020-02-24 01:09:33,910 INFO Updating Undecorated functions Environment
+2020-02-24 01:09:33,911 INFO Updating Class metadata Environment
+2020-02-24 01:09:33,913 INFO Updating parse annotation Environment
+2020-02-24 01:09:33,915 INFO Updating attributes Environment
+2020-02-24 01:09:33,916 INFO Updating Global Environment
+2020-02-24 01:09:33,916 INFO Updating Global Locations Environment
+2020-02-24 01:09:34,017 PERFORMANCE Full environment built: 0.532513s
+2020-02-24 01:09:34,166 INFO Checking 27 functions...
+2020-02-24 01:09:34,225 INFO Processed 14 of 27 functions
+2020-02-24 01:09:34,226 INFO Processed 27 of 27 functions
+2020-02-24 01:09:34,226 PERFORMANCE Check_TypeCheck: 0.134071s
+2020-02-24 01:09:34,226 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:09:34,277 INFO Postprocessing 624 sources...
+2020-02-24 01:09:34,330 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:09:34,386 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:09:34,387 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:09:34,393 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-650031.pid`
+2020-02-24 01:09:34,407 PERFORMANCE Check: 2.740225s
+2020-02-24 01:09:34,408 ERROR Found 5 type errors!
+
+2020-02-24 01:10:01,134 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:10:01,139 DEBUG Registering process with pid 650507 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-650507.pid`
+2020-02-24 01:10:01,189 PERFORMANCE Module tracker built: 0.032271s
+2020-02-24 01:10:01,289 INFO Parsing 624 stubs and sources...
+2020-02-24 01:10:02,903 PERFORMANCE Sources parsed: 1.713794s
+2020-02-24 01:10:03,004 INFO Building type environment...
+2020-02-24 01:10:03,443 INFO Updating is from empty stub result Environment
+2020-02-24 01:10:03,443 INFO Updating Alias Environment
+2020-02-24 01:10:03,444 INFO Updating Edges Environment
+2020-02-24 01:10:03,445 INFO Updating Undecorated functions Environment
+2020-02-24 01:10:03,446 INFO Updating Class metadata Environment
+2020-02-24 01:10:03,447 INFO Updating parse annotation Environment
+2020-02-24 01:10:03,448 INFO Updating attributes Environment
+2020-02-24 01:10:03,450 INFO Updating Global Environment
+2020-02-24 01:10:03,453 INFO Updating Global Locations Environment
+2020-02-24 01:10:03,554 PERFORMANCE Full environment built: 0.539180s
+2020-02-24 01:10:03,724 INFO Checking 27 functions...
+2020-02-24 01:10:03,793 INFO Processed 14 of 27 functions
+2020-02-24 01:10:03,793 INFO Processed 27 of 27 functions
+2020-02-24 01:10:03,795 PERFORMANCE Check_TypeCheck: 0.158397s
+2020-02-24 01:10:03,802 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:10:03,848 INFO Postprocessing 624 sources...
+2020-02-24 01:10:03,903 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:10:03,956 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:10:03,957 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:10:03,968 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-650507.pid`
+2020-02-24 01:10:03,979 PERFORMANCE Check: 2.800450s
+2020-02-24 01:10:03,980 ERROR Found 3 type errors!
+
+2020-02-24 01:10:28,001 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:10:28,006 DEBUG Registering process with pid 650939 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-650939.pid`
+2020-02-24 01:10:28,049 PERFORMANCE Module tracker built: 0.023303s
+2020-02-24 01:10:28,150 INFO Parsing 624 stubs and sources...
+2020-02-24 01:10:29,803 PERFORMANCE Sources parsed: 1.754292s
+2020-02-24 01:10:29,904 INFO Building type environment...
+2020-02-24 01:10:30,373 INFO Updating is from empty stub result Environment
+2020-02-24 01:10:30,373 INFO Updating Alias Environment
+2020-02-24 01:10:30,374 INFO Updating Edges Environment
+2020-02-24 01:10:30,374 INFO Updating Undecorated functions Environment
+2020-02-24 01:10:30,375 INFO Updating Class metadata Environment
+2020-02-24 01:10:30,375 INFO Updating parse annotation Environment
+2020-02-24 01:10:30,376 INFO Updating attributes Environment
+2020-02-24 01:10:30,376 INFO Updating Global Environment
+2020-02-24 01:10:30,378 INFO Updating Global Locations Environment
+2020-02-24 01:10:30,479 PERFORMANCE Full environment built: 0.569322s
+2020-02-24 01:10:30,649 INFO Checking 27 functions...
+2020-02-24 01:10:30,710 INFO Processed 14 of 27 functions
+2020-02-24 01:10:30,710 INFO Processed 27 of 27 functions
+2020-02-24 01:10:30,711 PERFORMANCE Check_TypeCheck: 0.141978s
+2020-02-24 01:10:30,711 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:10:30,763 INFO Postprocessing 624 sources...
+2020-02-24 01:10:30,822 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:10:30,875 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:10:30,875 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:10:30,880 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-650939.pid`
+2020-02-24 01:10:30,896 PERFORMANCE Check: 2.851179s
+2020-02-24 01:10:30,897 ERROR Found 3 type errors!
+
+2020-02-24 01:11:44,583 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:11:44,589 DEBUG Registering process with pid 652052 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-652052.pid`
+2020-02-24 01:11:44,638 PERFORMANCE Module tracker built: 0.031025s
+2020-02-24 01:11:44,739 INFO Parsing 624 stubs and sources...
+2020-02-24 01:11:46,330 PERFORMANCE Sources parsed: 1.690670s
+2020-02-24 01:11:46,431 INFO Building type environment...
+2020-02-24 01:11:46,858 INFO Updating is from empty stub result Environment
+2020-02-24 01:11:46,859 INFO Updating Alias Environment
+2020-02-24 01:11:46,859 INFO Updating Edges Environment
+2020-02-24 01:11:46,860 INFO Updating Undecorated functions Environment
+2020-02-24 01:11:46,862 INFO Updating Class metadata Environment
+2020-02-24 01:11:46,864 INFO Updating parse annotation Environment
+2020-02-24 01:11:46,866 INFO Updating attributes Environment
+2020-02-24 01:11:46,867 INFO Updating Global Environment
+2020-02-24 01:11:46,868 INFO Updating Global Locations Environment
+2020-02-24 01:11:46,969 PERFORMANCE Full environment built: 0.529567s
+2020-02-24 01:11:47,109 INFO Checking 27 functions...
+2020-02-24 01:11:47,167 INFO Processed 14 of 27 functions
+2020-02-24 01:11:47,167 INFO Processed 27 of 27 functions
+2020-02-24 01:11:47,167 PERFORMANCE Check_TypeCheck: 0.130760s
+2020-02-24 01:11:47,168 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:11:47,219 INFO Postprocessing 624 sources...
+2020-02-24 01:11:47,273 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:11:47,330 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:11:47,333 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:11:47,340 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-652052.pid`
+2020-02-24 01:11:47,356 PERFORMANCE Check: 2.724808s
+2020-02-24 01:11:47,357 ERROR Found 2 type errors!
+
+2020-02-24 01:12:45,994 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:12:45,998 DEBUG Registering process with pid 652960 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-652960.pid`
+2020-02-24 01:12:46,040 PERFORMANCE Module tracker built: 0.023766s
+2020-02-24 01:12:46,140 INFO Parsing 624 stubs and sources...
+2020-02-24 01:12:47,741 PERFORMANCE Sources parsed: 1.701437s
+2020-02-24 01:12:47,841 INFO Building type environment...
+2020-02-24 01:12:48,264 INFO Updating is from empty stub result Environment
+2020-02-24 01:12:48,265 INFO Updating Alias Environment
+2020-02-24 01:12:48,265 INFO Updating Edges Environment
+2020-02-24 01:12:48,266 INFO Updating Undecorated functions Environment
+2020-02-24 01:12:48,269 INFO Updating Class metadata Environment
+2020-02-24 01:12:48,271 INFO Updating parse annotation Environment
+2020-02-24 01:12:48,272 INFO Updating attributes Environment
+2020-02-24 01:12:48,272 INFO Updating Global Environment
+2020-02-24 01:12:48,273 INFO Updating Global Locations Environment
+2020-02-24 01:12:48,373 PERFORMANCE Full environment built: 0.523655s
+2020-02-24 01:12:48,530 INFO Checking 27 functions...
+2020-02-24 01:12:48,590 INFO Processed 14 of 27 functions
+2020-02-24 01:12:48,591 INFO Processed 27 of 27 functions
+2020-02-24 01:12:48,591 PERFORMANCE Check_TypeCheck: 0.136221s
+2020-02-24 01:12:48,592 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:12:48,643 INFO Postprocessing 624 sources...
+2020-02-24 01:12:48,697 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:12:48,753 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:12:48,758 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:12:48,760 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-652960.pid`
+2020-02-24 01:12:48,773 PERFORMANCE Check: 2.739653s
+2020-02-24 01:12:48,774 ERROR Found 2 type errors!
+
+2020-02-24 01:12:52,597 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:12:52,603 DEBUG Registering process with pid 653115 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-653115.pid`
+2020-02-24 01:12:52,650 PERFORMANCE Module tracker built: 0.029729s
+2020-02-24 01:12:52,750 INFO Parsing 624 stubs and sources...
+2020-02-24 01:12:54,353 PERFORMANCE Sources parsed: 1.702530s
+2020-02-24 01:12:54,453 INFO Building type environment...
+2020-02-24 01:12:54,885 INFO Updating is from empty stub result Environment
+2020-02-24 01:12:54,885 INFO Updating Alias Environment
+2020-02-24 01:12:54,886 INFO Updating Edges Environment
+2020-02-24 01:12:54,887 INFO Updating Undecorated functions Environment
+2020-02-24 01:12:54,889 INFO Updating Class metadata Environment
+2020-02-24 01:12:54,891 INFO Updating parse annotation Environment
+2020-02-24 01:12:54,892 INFO Updating attributes Environment
+2020-02-24 01:12:54,899 INFO Updating Global Environment
+2020-02-24 01:12:54,900 INFO Updating Global Locations Environment
+2020-02-24 01:12:55,001 PERFORMANCE Full environment built: 0.532005s
+2020-02-24 01:12:55,153 INFO Checking 27 functions...
+2020-02-24 01:12:55,212 INFO Processed 14 of 27 functions
+2020-02-24 01:12:55,212 INFO Processed 27 of 27 functions
+2020-02-24 01:12:55,213 PERFORMANCE Check_TypeCheck: 0.135227s
+2020-02-24 01:12:55,214 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:12:55,266 INFO Postprocessing 624 sources...
+2020-02-24 01:12:55,319 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:12:55,380 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:12:55,381 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:12:55,389 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-653115.pid`
+2020-02-24 01:12:55,405 PERFORMANCE Check: 2.761171s
+2020-02-24 01:12:55,406 ERROR Found 2 type errors!
+
+2020-02-24 01:13:20,913 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:13:20,920 DEBUG Registering process with pid 653571 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-653571.pid`
+2020-02-24 01:13:20,966 PERFORMANCE Module tracker built: 0.029755s
+2020-02-24 01:13:21,067 INFO Parsing 624 stubs and sources...
+2020-02-24 01:13:22,682 PERFORMANCE Sources parsed: 1.715471s
+2020-02-24 01:13:22,782 INFO Building type environment...
+2020-02-24 01:13:23,207 INFO Updating is from empty stub result Environment
+2020-02-24 01:13:23,207 INFO Updating Alias Environment
+2020-02-24 01:13:23,208 INFO Updating Edges Environment
+2020-02-24 01:13:23,209 INFO Updating Undecorated functions Environment
+2020-02-24 01:13:23,210 INFO Updating Class metadata Environment
+2020-02-24 01:13:23,211 INFO Updating parse annotation Environment
+2020-02-24 01:13:23,212 INFO Updating attributes Environment
+2020-02-24 01:13:23,215 INFO Updating Global Environment
+2020-02-24 01:13:23,215 INFO Updating Global Locations Environment
+2020-02-24 01:13:23,316 PERFORMANCE Full environment built: 0.524826s
+2020-02-24 01:13:23,463 INFO Checking 27 functions...
+2020-02-24 01:13:23,522 INFO Processed 14 of 27 functions
+2020-02-24 01:13:23,523 INFO Processed 27 of 27 functions
+2020-02-24 01:13:23,523 PERFORMANCE Check_TypeCheck: 0.134465s
+2020-02-24 01:13:23,524 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:13:23,574 INFO Postprocessing 624 sources...
+2020-02-24 01:13:23,628 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:13:23,681 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:13:23,682 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:13:23,690 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-653571.pid`
+2020-02-24 01:13:23,703 PERFORMANCE Check: 2.746558s
+2020-02-24 01:13:23,704 ERROR Found 1 type error!
+
+2020-02-24 01:13:40,725 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:13:40,731 DEBUG Registering process with pid 653903 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-653903.pid`
+2020-02-24 01:13:40,775 PERFORMANCE Module tracker built: 0.024229s
+2020-02-24 01:13:40,876 INFO Parsing 624 stubs and sources...
+2020-02-24 01:13:42,522 PERFORMANCE Sources parsed: 1.746835s
+2020-02-24 01:13:42,622 INFO Building type environment...
+2020-02-24 01:13:43,055 INFO Updating is from empty stub result Environment
+2020-02-24 01:13:43,055 INFO Updating Alias Environment
+2020-02-24 01:13:43,056 INFO Updating Edges Environment
+2020-02-24 01:13:43,058 INFO Updating Undecorated functions Environment
+2020-02-24 01:13:43,060 INFO Updating Class metadata Environment
+2020-02-24 01:13:43,062 INFO Updating parse annotation Environment
+2020-02-24 01:13:43,064 INFO Updating attributes Environment
+2020-02-24 01:13:43,065 INFO Updating Global Environment
+2020-02-24 01:13:43,065 INFO Updating Global Locations Environment
+2020-02-24 01:13:43,166 PERFORMANCE Full environment built: 0.533086s
+2020-02-24 01:13:43,311 INFO Checking 27 functions...
+2020-02-24 01:13:43,372 INFO Processed 14 of 27 functions
+2020-02-24 01:13:43,373 INFO Processed 27 of 27 functions
+2020-02-24 01:13:43,373 PERFORMANCE Check_TypeCheck: 0.135177s
+2020-02-24 01:13:43,374 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:13:43,425 INFO Postprocessing 624 sources...
+2020-02-24 01:13:43,478 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:13:43,533 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:13:43,533 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:13:43,541 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-653903.pid`
+2020-02-24 01:13:43,555 PERFORMANCE Check: 2.783978s
+2020-02-24 01:13:43,555 ERROR Found 1 type error!
+
+2020-02-24 01:13:59,494 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:13:59,501 DEBUG Registering process with pid 654225 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-654225.pid`
+2020-02-24 01:13:59,548 PERFORMANCE Module tracker built: 0.029075s
+2020-02-24 01:13:59,648 INFO Parsing 624 stubs and sources...
+2020-02-24 01:14:01,257 PERFORMANCE Sources parsed: 1.708888s
+2020-02-24 01:14:01,357 INFO Building type environment...
+2020-02-24 01:14:01,789 INFO Updating is from empty stub result Environment
+2020-02-24 01:14:01,790 INFO Updating Alias Environment
+2020-02-24 01:14:01,791 INFO Updating Edges Environment
+2020-02-24 01:14:01,792 INFO Updating Undecorated functions Environment
+2020-02-24 01:14:01,794 INFO Updating Class metadata Environment
+2020-02-24 01:14:01,795 INFO Updating parse annotation Environment
+2020-02-24 01:14:01,796 INFO Updating attributes Environment
+2020-02-24 01:14:01,796 INFO Updating Global Environment
+2020-02-24 01:14:01,797 INFO Updating Global Locations Environment
+2020-02-24 01:14:01,898 PERFORMANCE Full environment built: 0.531843s
+2020-02-24 01:14:02,049 INFO Checking 27 functions...
+2020-02-24 01:14:02,109 INFO Processed 14 of 27 functions
+2020-02-24 01:14:02,109 INFO Processed 27 of 27 functions
+2020-02-24 01:14:02,110 PERFORMANCE Check_TypeCheck: 0.139052s
+2020-02-24 01:14:02,110 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:14:02,161 INFO Postprocessing 624 sources...
+2020-02-24 01:14:02,213 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:14:02,268 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:14:02,269 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:14:02,275 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-654225.pid`
+2020-02-24 01:14:02,289 PERFORMANCE Check: 2.751127s
+2020-02-24 01:14:02,290 ERROR Found 1 type error!
+
+2020-02-24 01:14:34,518 DEBUG Running `/home/toki/Projects/bindo/venv/bin/pyre.bin check -logging-sections parser -project-root /home/toki/Projects/bindo -log-directory /home/toki/Projects/bindo/.pyre -filter-directories /home/toki/Projects/bindo/bindo -workers 1 -ignore-all-errors /home/toki/Projects/bindo/.pyre -search-path /home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.6,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.5,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.4,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3.3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/stdlib/2and3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/3,/home/toki/Projects/bindo/venv/lib/python3.8/site-packages/typeshed/third_party/2and3 /home/toki/Projects/bindo/bindo`
+2020-02-24 01:14:34,524 DEBUG Registering process with pid 654770 in pid file `/home/toki/Projects/bindo/.pyre/pid_files/check-654770.pid`
+2020-02-24 01:14:34,571 PERFORMANCE Module tracker built: 0.029570s
+2020-02-24 01:14:34,672 INFO Parsing 624 stubs and sources...
+2020-02-24 01:14:36,254 PERFORMANCE Sources parsed: 1.683131s
+2020-02-24 01:14:36,355 INFO Building type environment...
+2020-02-24 01:14:36,780 INFO Updating is from empty stub result Environment
+2020-02-24 01:14:36,780 INFO Updating Alias Environment
+2020-02-24 01:14:36,782 INFO Updating Edges Environment
+2020-02-24 01:14:36,784 INFO Updating Undecorated functions Environment
+2020-02-24 01:14:36,785 INFO Updating Class metadata Environment
+2020-02-24 01:14:36,786 INFO Updating parse annotation Environment
+2020-02-24 01:14:36,787 INFO Updating attributes Environment
+2020-02-24 01:14:36,788 INFO Updating Global Environment
+2020-02-24 01:14:36,789 INFO Updating Global Locations Environment
+2020-02-24 01:14:36,889 PERFORMANCE Full environment built: 0.525248s
+2020-02-24 01:14:37,040 INFO Checking 27 functions...
+2020-02-24 01:14:37,100 INFO Processed 14 of 27 functions
+2020-02-24 01:14:37,100 INFO Processed 27 of 27 functions
+2020-02-24 01:14:37,101 PERFORMANCE Check_TypeCheck: 0.134218s
+2020-02-24 01:14:37,101 MEMORY Shared memory size post-typecheck (size: 8)
+2020-02-24 01:14:37,153 INFO Postprocessing 624 sources...
+2020-02-24 01:14:37,206 INFO Postprocessed 209 of 624 sources
+2020-02-24 01:14:37,263 INFO Postprocessed 418 of 624 sources
+2020-02-24 01:14:37,264 INFO Postprocessed 624 of 624 sources
+2020-02-24 01:14:37,265 DEBUG Removing pid file: `/home/toki/Projects/bindo/.pyre/pid_files/check-654770.pid`
+2020-02-24 01:14:37,280 PERFORMANCE Check: 2.719881s
+2020-02-24 01:14:37,281 ERROR Found 1 type error!
+
