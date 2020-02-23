@@ -16,10 +16,7 @@ class Server(threading.Thread):
                  callback: Callable[[Dict[str, Union[str, int]]], None]) -> None:
         self.buffer = bytes()
         self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.connection.connect((
-            address or 'server.slsknet.org',
-            port or 2242
-        ))
+        self.connection.connect((address, port))
         self.callback = callback
         super().__init__()
 
