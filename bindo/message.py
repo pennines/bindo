@@ -26,7 +26,11 @@ class MessageWriter(MessageFactory):
 
     def pack_string(self, value: str) -> None:
         value_len = len(value)
-        self.buffer += struct.pack(f'<i{value_len}s', value_len, bytes(value, 'latin-1'))
+        self.buffer += struct.pack(
+            f'<i{value_len}s',
+            value_len,
+            bytes(value, 'latin-1')
+        )
 
     # TODO: pack_bool, pack_large_integer.
 
@@ -39,13 +43,19 @@ class MessageReader(MessageFactory):
         # It's not as elegant as I want it to be but it works.
 
     def unpack_integer(self) -> int:
-        (value,) = struct.unpack('<i', self.buffer[self.pointer:self.pointer + 4])
+        (value,) = struct.unpack(
+            '<i',
+            self.buffer[self.pointer:self.pointer + 4]
+        )
         self.pointer += 4
         return value
 
     def unpack_string(self) -> str:
         value_len = self.unpack_integer()
-        (value,) = struct.unpack(f'<{value_len}s', self.buffer[self.pointer:self.pointer + value_len])
+        (value,) = struct.unpack(
+            f'<{value_len}s',
+            self.buffer[self.pointer:self.pointer + value_len]
+        )
         self.pointer += value_len
         return value.decode('latin-1')
 
@@ -101,7 +111,7 @@ class Login(Message):
     @staticmethod
     def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
         message = MessageReader(buffer)
-        length = message.unpack_integer()
+        _ = message.unpack_integer()
         code = message.unpack_integer()
         if code:
             greet = message.unpack_string()

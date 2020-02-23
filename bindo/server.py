@@ -4,14 +4,16 @@ from typing import Callable, Dict, Type, Union
 
 from .message import Message
 
+
 class Server(threading.Thread):
-    """This class represents connection to the server.
+    """This class represents a connection to the server.
 
     We can send a message and recieve response to this message. Each response
     is handled via callback.
     """
 
-    def __init__(self, address: str, port: int, callback: Callable[[Dict[str, Union[str, int]]], None]) -> None:
+    def __init__(self, address: str, port: int,
+                 callback: Callable[[Dict[str, Union[str, int]]], None]) -> None:
         self.buffer = bytes()
         self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.connection.connect((
