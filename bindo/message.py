@@ -228,6 +228,28 @@ class SharedFoldersFiles(Message):
         return self.construct_message(35, message.get_buffer())
 
 
+class CannotConnect(Message):
+
+    def __init__(self, token: int, username: str) -> None:
+        self.token = token
+        self.username = username
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_token(self.token)
+        message.pack_username(self.username)
+        return self.construct_message(1001, message.get_buffer())
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        token = message.unpack_integer()
+        # username = message.unpack_string()
+        return {"code": code, "token": token}
+
+
 class PeerInitMessage(Message):
     """This class represents Peer Init Message.
 
@@ -313,7 +335,8 @@ messages = {
     3: GetPeerAddress,
     18: ConnectToPeer,
     28: SetStatus,
-    35: SharedFoldersFiles
+    35: SharedFoldersFiles,
+    1001: CannotConnect
 }
 
 
