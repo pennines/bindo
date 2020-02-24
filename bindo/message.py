@@ -6,7 +6,7 @@ from typing import Dict, Union
 
 class MessageFactory(object):
 
-    def __init__(self, buffer: bytes):
+    def __init__(self, buffer: bytes) -> None:
         self.buffer = buffer
 
     def append_buffer(self, buffer: bytes) -> None:
