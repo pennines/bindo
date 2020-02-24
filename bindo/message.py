@@ -137,7 +137,21 @@ class SetListenPort(Message):
         return self.construct_message(2, message.get_buffer())
 
 
+class SharedFoldersFiles(Message):
+
+    def __init__(self, dirs: int, files: int) -> None:
+        self.dirs = dirs
+        self.files = files
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_integer(self.dirs)
+        message.pack_integer(self.files)
+        return self.construct_message(35, message.get_buffer())
+
+
 messages = {
     1: Login,
-    2: SetListenPort
+    2: SetListenPort,
+    35: SharedFoldersFiles
 }
