@@ -25,6 +25,9 @@ class MessageWriter(MessageFactory):
         buffer = bytes()
         super().__init__(buffer)
 
+    def pack_character(self, value: str) -> None:
+        self.buffer += struct.pack('<s', bytes(value, 'latin-1'))
+
     def pack_integer(self, value: int) -> None:
         self.buffer += struct.pack('<i', value)
 
@@ -44,6 +47,14 @@ class MessageReader(MessageFactory):
     def __init__(self, buffer: bytes) -> None:
         self.pointer = 0
         super().__init__(buffer)
+
+    def unpack_character(self) -> str:
+        (value,) = struct.unpack(
+            '<s',
+            self.buffer[self.pointer:self.pointer + 1]
+        )
+        self.pointer += 1
+        return value.decode('latin-1')
 
     def unpack_integer(self) -> int:
         (value,) = struct.unpack(
@@ -182,10 +193,95 @@ class SharedFoldersFiles(Message):
         return self.construct_message(35, message.get_buffer())
 
 
+class PeerInitMessage(Message):
+    """This class represents Peer Init Message.
+
+    The difference between a PeerInitMessage and a normal Message is that the
+    code part is only 1 byte long.
+    """
+
+    @staticmethod
+    def construct_message(message_code: int, buffer: bytes) -> bytes:
+        buffer_len = len(buffer) + 1
+        message = MessageWriter()
+        message.pack_integer(buffer_len)
+        message.pack_character(message_code)
+        message.append_buffer(buffer)
+        return message.get_buffer()
+
+    @staticmethod
+    def create_message(message_code: int, **kwargs: Union[str, int]) -> bytes:
+        message = peer_messages[message_code]
+        message = message(**kwargs)
+        return message.pack_message()
+
+    @staticmethod
+    def unpack_message(message_code: int, buffer: bytes) -> Dict[str, Union[str, int]]:
+        if message_code not in peer_messages:
+            return {"code": "unknown"}
+        message = peer_messages[message_code]
+        return message.unpack_message(buffer)
+
+
+class PierceFirewall(PeerInitMessage):
+
+    def __init__(self, token: int) -> None:
+        self.token = token
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_integer(self.token)
+        return self.construct_message(0, message.get_buffer())
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, int]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_character()
+        token = message.unpack_integer()
+        return {"code": int(code), "token": token}
+
+
+class PeerInit(PeerInitMessage):
+
+    def __init__(self, username: str, type: str, token: int) -> None:
+        self.username = username
+        self.type = type
+        self.token = token
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_string(self.username)
+        message.pack_type(self.type)
+        massage.pack_token(self.token)
+        return self.construct_message(1, message.get_buffer())
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_character()
+        username = message.unpack_string()
+        type = message.unpack_string()
+        token = message.unpack_integer()
+        return {
+            "code": int(code),
+            "username": username,
+            "type": type,
+            "token": token
+        }
+
+
 messages = {
     1: Login,
     2: SetListenPort,
     3: GetPeerAddress,
     28: SetStatus,
     35: SharedFoldersFiles
+}
+
+
+peer_messages = {
+    0: PierceFirewall,
+    1: PeerInit
 }
