@@ -1,6 +1,6 @@
 import socket
 import threading
-from typing import Callable, Dict, Type, Union
+from typing import Callable, Dict, Union
 
 from .message import Message
 

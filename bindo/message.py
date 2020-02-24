@@ -296,7 +296,11 @@ class PierceFirewall(PeerInitMessage):
         _ = message.unpack_integer()
         code = message.unpack_character()
         token = message.unpack_integer()
-        return {"code": int(code), "token": token}
+        return {
+            # TODO: Remove this ugly hack.
+            "code": int.from_bytes(bytes(code, 'latin-1'), 'little'),
+            "token": token
+        }
 
 
 class PeerInit(PeerInitMessage):
