@@ -185,7 +185,7 @@ class ConnectToPeer(Message):
 
     @staticmethod
     def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
-        message = MessageReader()
+        message = MessageReader(buffer)
         _ = message.unpack_integer()
         code = message.unpack_integer()
         username = message.unpack_string()
