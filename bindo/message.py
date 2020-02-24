@@ -169,6 +169,41 @@ class GetPeerAddress(Message):
         return {"code": code, "username": username, "ip": ip, "port": port}
 
 
+class ConnectToPeer(Message):
+
+    def __init__(self, token: int, username: str, type: str) -> None:
+        self.token = token
+        self.username = username
+        self.type = type
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_integer(self.token)
+        message.pack_string(self.username)
+        message.pack_string(self.type)
+        return self.construct_message(18, message.get_buffer())
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader()
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        username = message.unpack_string()
+        type = message.unpack_string()
+        ip = message.unpack_integer()
+        port = message.unpack_integer()
+        token = message.unpack_integer()
+        # priviledged = message.unpack_bool()
+        return {
+            "code": code,
+            "username": username,
+            "type": type,
+            "ip": ip,
+            "port": port,
+            "token": token
+        }
+
+
 class SetStatus(Message):
 
     def __init__(self, status: int) -> None:
@@ -276,6 +311,7 @@ messages = {
     1: Login,
     2: SetListenPort,
     3: GetPeerAddress,
+    18: ConnectToPeer,
     28: SetStatus,
     35: SharedFoldersFiles
 }
