@@ -137,6 +137,27 @@ class SetListenPort(Message):
         return self.construct_message(2, message.get_buffer())
 
 
+class GetPeerAddress(Message):
+
+    def __init__(self, username: str) -> None:
+        self.username = username
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_string(self.username)
+        return self.construct_message(3, message.get_buffer())
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        username = message.unpack_string()
+        ip = message.unpack_integer()
+        port = message.unpack_integer()
+        return {"code": code, "username": username, "ip": ip, "port": port}
+
+
 class SetStatus(Message):
 
     def __init__(self, status: int) -> None:
@@ -164,6 +185,7 @@ class SharedFoldersFiles(Message):
 messages = {
     1: Login,
     2: SetListenPort,
+    3: GetPeerAddress,
     28: SetStatus,
     35: SharedFoldersFiles
 }
