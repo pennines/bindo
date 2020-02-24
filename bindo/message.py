@@ -126,6 +126,18 @@ class Login(Message):
             raise ConnectionError(reason)
 
 
+class SetListenPort(Message):
+
+    def __init__(self, port: int) -> None:
+        self.port = port
+
+    def pack_message(self) -> bytes:
+        message = MessageWriter()
+        message.pack_integer(self.port)
+        return self.construct_message(2, message.get_buffer())
+
+
 messages = {
-    1: Login
+    1: Login,
+    2: SetListenPort
 }
