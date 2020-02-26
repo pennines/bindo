@@ -280,6 +280,23 @@ class PeerInitMessage(Message):
         return message.unpack_message(buffer)
 
 
+class PeerMessage(Message):
+
+    @staticmethod
+    def create_message(message_code: int, **kwargs: Union[str, int]) -> bytes:
+        message = peer_messages[message_code]
+        message = message(**kwargs)
+        return message.pack_message()
+
+    @staticmethod
+    def unpack_message(message_code: int, buffer: bytes) -> Dict[str, Union[str, int]]:
+        if message_code not in peer_messages:
+            return {"code": "unknown"}
+        message = peer_messages[message_code]
+        return message.unpack_message(buffer)
+
+
+
 class PierceFirewall(PeerInitMessage):
 
     def __init__(self, token: int) -> None:
@@ -333,6 +350,40 @@ class PeerInit(PeerInitMessage):
         }
 
 
+class InfoRequest(PeerMessage):
+
+    def pack_message(self) -> bytes:
+        message = bytes()
+        return self.construct_message(15, message)
+
+
+class InfoReply(PeerMessage):
+
+    def pack_message(self) -> None:
+        # TODO: Implemenet this
+        pass
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader()
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        description = message.unpack_string()
+        has_picture = message.unpack_character()
+        if has_picture:
+            picture = message.unpack_string()
+        total_upl = message.unpack_integer()
+        queue_size = message.unpack_integer()
+        # slots_free = message.unpack_bool()
+        return {
+            "code": code,
+            "description": description,
+            "has_picture": has_picture,
+            "total_upl": total_upl,
+            "queue_size": queue_size
+        }
+
+
 messages = {
     1: Login,
     2: SetListenPort,
@@ -346,5 +397,7 @@ messages = {
 
 peer_messages = {
     0: PierceFirewall,
-    1: PeerInit
+    1: PeerInit,
+    15: InfoRequest,
+    16: InfoReply
 }
