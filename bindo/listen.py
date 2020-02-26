@@ -22,4 +22,8 @@ class Listen(threading.Thread):
             # Listen for incoming connections, send an incoming connection via
             # callback.
             (socket, address) = self.server.accept()
+            # PierceFirewall message (recieve it and do nothing with it.)
+            data = socket.recv(64)
+
+            # Send a socket via callback.
             self.callback(socket, address)

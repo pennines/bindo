@@ -15,6 +15,9 @@ class Peer(threading.Thread):
         super().__init__()
         self.daemon = True
 
+    def send(self, message: bytes) -> None:
+        self.connection.send(message)
+
     def run(self) -> None:
         while True:
             data = self.connection.recv(4096)
@@ -30,6 +33,5 @@ class Peer(threading.Thread):
                 #   HOW TO HANDLE THIS?
                 message_code = int.from_bytes(self.buffer[4:5], 'little')
                 message = PeerMessage.unpack_message(message_code, self.buffer)
-                print(message_len, message_code)
                 self.callback(message)
                 self.buffer = self.buffer[message_len + 4:]

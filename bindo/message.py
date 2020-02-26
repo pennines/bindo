@@ -365,7 +365,7 @@ class InfoReply(PeerMessage):
 
     @staticmethod
     def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
-        message = MessageReader()
+        message = MessageReader(buffer)
         _ = message.unpack_integer()
         code = message.unpack_integer()
         description = message.unpack_string()
@@ -373,14 +373,14 @@ class InfoReply(PeerMessage):
         if has_picture:
             picture = message.unpack_string()
         total_upl = message.unpack_integer()
-        queue_size = message.unpack_integer()
+        # queue_size = message.unpack_integer()
         # slots_free = message.unpack_bool()
         return {
             "code": code,
             "description": description,
             "has_picture": has_picture,
             "total_upl": total_upl,
-            "queue_size": queue_size
+            # "queue_size": queue_size
         }
 
 
