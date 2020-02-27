@@ -96,7 +96,8 @@ class Message(object):
     @staticmethod
     def unpack_message(message_code: int, buffer: bytes) -> Dict[str, Union[str, int]]:
         if message_code not in messages:
-            return {"code": "unknown"}
+            # That's a little bit awkward.
+            return {"code": "unknown", "message_code": message_code}
         message = messages[message_code]
         return message.unpack_message(buffer)
 
@@ -296,7 +297,6 @@ class PeerMessage(Message):
         return message.unpack_message(buffer)
 
 
-
 class PierceFirewall(PeerInitMessage):
 
     def __init__(self, token: int) -> None:
@@ -331,7 +331,7 @@ class PeerInit(PeerInitMessage):
         message = MessageWriter()
         message.pack_string(self.username)
         message.pack_type(self.type)
-        massage.pack_token(self.token)
+        message.pack_token(self.token)
         return self.construct_message(1, message.get_buffer())
 
     @staticmethod
@@ -371,7 +371,7 @@ class InfoReply(PeerMessage):
         description = message.unpack_string()
         has_picture = message.unpack_character()
         if has_picture:
-            picture = message.unpack_string()
+            _ = message.unpack_string()
         total_upl = message.unpack_integer()
         # queue_size = message.unpack_integer()
         # slots_free = message.unpack_bool()

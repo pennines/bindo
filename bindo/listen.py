@@ -1,8 +1,6 @@
 import socket
 import threading
-from typing import Callable, Dict, Type, Tuple, Union
-
-from .message import PeerInitMessage
+from typing import Callable, Type, Tuple
 
 
 class Listen(threading.Thread):
@@ -23,7 +21,7 @@ class Listen(threading.Thread):
             # callback.
             (socket, address) = self.server.accept()
             # PierceFirewall message (recieve it and do nothing with it.)
-            data = socket.recv(64)
+            _ = socket.recv(64)
 
             # Send a socket via callback.
             self.callback(socket, address)

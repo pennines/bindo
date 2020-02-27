@@ -1,6 +1,6 @@
 import socket
 import threading
-from typing import Type, Tuple, Callable, Union, Dict
+from typing import Type, Callable, Union, Dict
 
 from .message import PeerMessage
 
