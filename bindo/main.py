@@ -1,13 +1,15 @@
 import time
 import socket
+import threading
 from typing import Dict, Union, Type, Tuple
+from queue import Queue
 
 from .listen import Listen
 from .server import Server
 from .message import Message
 
 
-class Client(object):
+class Client(threading.Thread):
 
     def __init__(self, username: str, password: str) -> None:
         self.server_address = 'server.slsknet.org'
@@ -17,7 +19,8 @@ class Client(object):
         self.username = username
         self.password = password
 
-        self.logged_in = False
+        self.outgoing_messages = Queue()
+        self.peers = {}
 
         self.server = Server(self.server_address, self.server_port, self.handle_message)
         self.listen = Listen(self.listen_port, self.handle_socket)
@@ -25,32 +28,30 @@ class Client(object):
         self.server.start()
         self.listen.start()
 
+        super().__init__()
+
+    def run(self) -> None:
+        # Might be usefull to put those into the seperate method.
+        self.outgoing_messages.put(Message.create_message(1, username=self.username, password=self.password))
+        self.outgoing_messages.put(Message.create_message(2, port=self.listen_port))
+        self.outgoing_messages.put(Message.create_message(28, status=2))
+        self.outgoing_messages.put(Message.create_message(35, dirs=10, files=250))
+
+        while True:
+            message = self.outgoing_messages.get(block=True)
+            self.server.send(message)
+            time.sleep(0.05)  # That might be unnecessary.
+
     def handle_message(self, message: Dict[str, Union[str, int]]) -> None:
         if message.get('code') == 1:
             print('[CLIENT]: Successfully logged in.')
-            self.logged_in = True
         elif message.get('code') == 'unknown':
             print(f"[CLIENT]: Recieved unknown message ({message.get('message_code')}).")
 
     def handle_socket(self, socket: Type[socket.socket], address: Tuple[str, int]) -> None:
         print(socket, address)
+        self.peers = {}
 
     def server_message(self, message_code: int, **kwargs: Dict[str, Union[str, int]]) -> None:
         message = Message.create_message(message_code, **kwargs)
         self.server.send(message)
-
-    def login(self) -> None:
-        if self.logged_in:
-            print('[CLIENT]: User already logged in.')
-            return
-
-        login_messages = []
-        # TODO: Config file.
-        login_messages.append(Message.create_message(1, username=self.username, password=self.password))
-        login_messages.append(Message.create_message(2, port=self.listen_port))
-        login_messages.append(Message.create_message(28, status=2))
-        login_messages.append(Message.create_message(35, dirs=10, files=250))
-
-        for message in login_messages:
-            self.server.send(message)
-            time.sleep(0.05)  # maybe that's unnecessary
