@@ -356,6 +356,14 @@ class InfoRequest(PeerMessage):
         message = bytes()
         return self.construct_message(15, message)
 
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        return {
+            "code": code
+        }
+
 
 class InfoReply(PeerMessage):
 

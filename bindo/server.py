@@ -19,6 +19,7 @@ class Server(threading.Thread):
         self.connection.connect((address, port))
         self.callback = callback
         super().__init__()
+        self.daemon = True
 
     def send(self, message: bytes) -> None:
         self.connection.send(message)
