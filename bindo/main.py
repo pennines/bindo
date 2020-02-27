@@ -44,7 +44,7 @@ class Client(threading.Thread):
                 self.server.send(message['message'])
                 time.sleep(0.05)  # TODO: Remove maybe.
             else:
-                token = message.get('token')
+                token = message.get('recepient')
                 peer = self.peers.get(token)
                 if peer:
                     print('[CLIENT]: Sending message to peer (token={token}).')
