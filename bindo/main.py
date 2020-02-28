@@ -89,5 +89,8 @@ class Client(threading.Thread):
             if self.connection_established(token):
                 self.peer_message(token, message_code, **kwargs)
                 break
+            elif not tries:
+                break
             else:
+                tries -= 1
                 time.sleep(0.2)
