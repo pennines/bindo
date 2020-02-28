@@ -57,6 +57,8 @@ class Client(threading.Thread):
 
     def handle_peer(self, message: Dict[str, Union[str, int]], token: int) -> None:
         print(f"[CLIENT]: Recieved message from peer (message_code={message.get('code')}, token={token}).")
+        if message.get('code') == 5:
+            print(message.get('dirs'))
 
     def handle_socket(self, socket: Type[socket.socket], address: Tuple[str, int], token) -> None:
         print(f'[CLIENT]: Received new socket (address={address}, token={token})')

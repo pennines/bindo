@@ -2,6 +2,7 @@
 import struct
 import hashlib
 from typing import Dict, Union
+import zlib
 
 
 class MessageFactory(object):
@@ -72,6 +73,9 @@ class MessageReader(MessageFactory):
         )
         self.pointer += value_len
         return value.decode('latin-1')
+
+    def get_buffer_remains(self) -> bytes:
+        return self.buffer[self.pointer:]
 
     # TODO: unpack_book, unpack_large_integer
 
@@ -350,12 +354,72 @@ class PeerInit(PeerInitMessage):
         }
 
 
+class SharesRequest(PeerMessage):
+
+    def pack_message(self) -> bytes:
+        message = bytes()
+        return self.construct_message(4, message)
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        return {
+            "code": code
+        }
+
+
+class SharesReply(PeerMessage):
+
+    def pack_message(self) -> bytes:
+        # TODO: Implemenet this
+        pass
+
+    @staticmethod
+    def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
+        message = MessageReader(buffer)
+        _ = message.unpack_integer()
+        code = message.unpack_integer()
+        remains = message.get_buffer_remains()
+
+        decompressed = zlib.decompress(remains)
+        # Create a new reader, based on the decompressed buffer.
+        message = MessageReader(decompressed)
+        # TODO: Filenames might actually contain UTF-8 characters.  This should
+        # be simple to fix/implement.
+
+        dirs_count = message.unpack_integer()
+        dirs = []
+        for _ in range(dirs_count):
+            dir_name = message.unpack_string()
+            files_count = message.unpack_integer()
+            files = []
+            for _ in range(files_count):
+                _ = message.unpack_character()
+                file_name = message.unpack_string()
+                file_size = message.unpack_integer()
+                _ = message.unpack_string()
+                _ = message.unpack_integer()  # Some unknow undocumented integer.
+                file_attr_count = message.unpack_integer()
+                for _ in range(file_attr_count):
+                    _ = message.unpack_integer()
+                    _ = message.unpack_integer()
+                files.append({
+                    "name": file_name,
+                    "size": file_size,
+                })
+            dirs.append({"name": dir_name, "files": files})
+        return {"code": code, "dirs": dirs}
+
+
 class InfoRequest(PeerMessage):
 
     def pack_message(self) -> bytes:
         message = bytes()
         return self.construct_message(15, message)
 
+    @staticmethod
     def unpack_message(buffer: bytes) -> Dict[str, Union[str, int]]:
         message = MessageReader(buffer)
         _ = message.unpack_integer()
@@ -406,6 +470,8 @@ messages = {
 peer_messages = {
     0: PierceFirewall,
     1: PeerInit,
+    4: SharesRequest,
+    5: SharesReply,
     15: InfoRequest,
     16: InfoReply
 }
