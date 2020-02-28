@@ -65,14 +65,14 @@ class MessageReader(MessageFactory):
         self.pointer += 4
         return value
 
-    def unpack_string(self) -> str:
+    def unpack_string(self, decoding='latin-1') -> str:
         value_len = self.unpack_integer()
         (value,) = struct.unpack(
             f'<{value_len}s',
             self.buffer[self.pointer:self.pointer + value_len]
         )
         self.pointer += value_len
-        return value.decode('latin-1')
+        return value.decode(decoding)
 
     def get_buffer_remains(self) -> bytes:
         return self.buffer[self.pointer:]
@@ -386,20 +386,18 @@ class SharesReply(PeerMessage):
         decompressed = zlib.decompress(remains)
         # Create a new reader, based on the decompressed buffer.
         message = MessageReader(decompressed)
-        # TODO: Filenames might actually contain UTF-8 characters.  This should
-        # be simple to fix/implement.
 
         dirs_count = message.unpack_integer()
         dirs = []
         for _ in range(dirs_count):
-            dir_name = message.unpack_string()
+            dir_name = message.unpack_string('utf-8')
             files_count = message.unpack_integer()
             files = []
             for _ in range(files_count):
                 _ = message.unpack_character()
-                file_name = message.unpack_string()
+                file_name = message.unpack_string('utf-8')
                 file_size = message.unpack_integer()
-                _ = message.unpack_string()
+                _ = message.unpack_string('utf-8')
                 _ = message.unpack_integer()  # Some unknow undocumented integer.
                 file_attr_count = message.unpack_integer()
                 for _ in range(file_attr_count):
